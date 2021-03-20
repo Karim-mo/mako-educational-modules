@@ -18,6 +18,14 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this);
         }
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+            Screen.orientation = ScreenOrientation.Landscape;
+            Screen.autorotateToPortrait = false;
+            Screen.autorotateToPortraitUpsideDown = false;
+        }
     }
 
     void Start()
