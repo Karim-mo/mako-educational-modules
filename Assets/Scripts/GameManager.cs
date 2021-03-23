@@ -37,4 +37,14 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    //public void HideAndUnhide(GameObject obj, float time)
+    //{
+
+    //}
+
+    //IEnumerator _HideAndUnhide(GameObject obj, float time)
+    //{
+
+    //}
 }
