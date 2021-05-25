@@ -16,21 +16,24 @@ public class FacesModule : MonoBehaviour
     private bool isCorrect;
     private bool isReady;
 
+    private int i;
+
+    public Face[] stageTwoFaces;
+    public GameObject[] questions;
+
     [Header("Stage 1")]
     public Face[] faces;
     public GameObject facesPrefab;
     public GameObject demoHolder;
     public GameObject demoQuestion;
+    
 
-    [Header("Stage 2")]
+    [Header("Stage 2 & 3")]
     public GameObject stageTwo;
-    public Face[] stageTwoFaces;
     public GameObject stageTwoHolderPrefab;
-    public GameObject questionOne;
-    public GameObject questionTwo;
-    public GameObject questionThree;
-    public GameObject questionFour;
-    public GameObject questionFive;
+
+    [Header("Stage 4")]
+    public GameObject stageFour;
 
     void Start()
     {
@@ -72,7 +75,7 @@ public class FacesModule : MonoBehaviour
     }
 
     IEnumerator Stage_2(){
-        int i = 0;
+        // Q1
         GameObject Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
         int max = i + 4;
         for(; i < max; i++){
@@ -82,13 +85,165 @@ public class FacesModule : MonoBehaviour
         StartCoroutine(Say("Get ready for the next question."));
         while(!isReady) yield return null;
         Destroy(Holder);
-        questionOne.SetActive(true);
-        StartCoroutine(Say(questionOne.GetComponent<PictureQuestionMaker>().QuestionText));
+        questions[0].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[0].GetComponent<PictureQuestionMaker>().QuestionText));
         while(!isCorrect) yield return null;
-        questionOne.SetActive(false);
+        questions[0].SetActive(false);
+
+        // Q2
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[1].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[1].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[1].SetActive(false);
+
+        // Q3
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[2].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[2].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[2].SetActive(false);
+
+        // Q4
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[3].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[3].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[3].SetActive(false);
+
+        // Q5
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[4].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[4].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[4].SetActive(false);
+        PlayerPrefs.SetInt("FacesSave", 3);
+        Next(3);
     }
 
     IEnumerator Stage_3(){
+        // Q6
+        GameObject Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        int max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[5].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[5].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[5].SetActive(false);
+
+        // Q7
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[6].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[6].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[6].SetActive(false);
+
+        // Q8
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[7].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[7].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[7].SetActive(false);
+
+        // Q9
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[8].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[8].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[8].SetActive(false);
+
+        // Q10
+        Holder = Instantiate(stageTwoHolderPrefab, stageTwo.transform);
+        max = i + 4;
+        for(; i < max; i++){
+            GameObject tempFace = Instantiate(facesPrefab, Holder.transform.GetChild(0).transform.GetChild(0).transform);
+            tempFace.GetComponent<FaceWithName>().init(stageTwoFaces[i].img, stageTwoFaces[i].name);
+        }
+        StartCoroutine(Say("Get ready for the next question."));
+        while(!isReady) yield return null;
+        Destroy(Holder);
+        questions[9].SetActive(true);
+        while(!Server._Manager.ttsDone) yield return null;
+        StartCoroutine(Say(questions[9].GetComponent<PictureQuestionMaker>().QuestionText));
+        while(!isCorrect) yield return null;
+        questions[9].SetActive(false);
+        PlayerPrefs.SetInt("FacesSave", 4);
+        Next(4);
+    }
+
+    IEnumerator Stage_4(){
+        stageFour.SetActive(true);
         yield return null;
     }
 
@@ -110,6 +265,7 @@ public class FacesModule : MonoBehaviour
     }
     
     private void Next(int stage){
+        i = stage > 1 ? (stage - 2) * 20: 0;
         StartCoroutine("Stage_" + stage);
     }
 
