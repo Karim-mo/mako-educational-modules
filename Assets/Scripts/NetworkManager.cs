@@ -21,6 +21,8 @@ public class NetworkManager : MonoBehaviour
     [HideInInspector]
     public bool isConnected = false;
     [HideInInspector]
+    public bool ttsDone = false;
+    [HideInInspector]
     public string sceneToLoad = "Null";
 
     Queue<MakoServerMessage> jobs;
@@ -89,6 +91,20 @@ public class NetworkManager : MonoBehaviour
                 }
                 SceneManager.LoadScene(msg.message);
             }
+            if(msg.type == "tts_response")
+            {
+                if(msg.message == "tts_complete"){
+                    ttsDone = true;
+                }
+            }
         }
+    }
+
+    public void sendTTS(string message){
+        ttsDone = false;
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "tts_request";
+        msg.message = message;        
+        ws.Send(JsonConvert.SerializeObject(msg));
     }
 }

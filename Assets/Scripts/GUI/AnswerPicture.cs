@@ -19,11 +19,13 @@ public class AnswerPicture : MonoBehaviour
             {
                 // Send positive feedback to robot
                 // Update game manager with correct answer to proceed with the questions
+                Topics._topics.CorrectAnswerTrigger();
                 Debug.Log("This is the correct answer");
             }
             else
             {
                 // Send Negative feedback to robot
+                Topics._topics.WrongAnswerTrigger();
                 Debug.Log("This is the wrong answer");
             }
         });

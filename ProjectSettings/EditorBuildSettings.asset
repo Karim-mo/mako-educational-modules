@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Welcome.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/WaitMenu.unity
+    guid: 25bd0fad0db9c844e8551f679a9cfb1d
+  - enabled: 1
     path: Assets/Scenes/EmotionModule.unity
     guid: bceea29e11b0ef343871f2490a47c0f1
   - enabled: 1
-    path: Assets/Scenes/WaitMenu.unity
-    guid: 25bd0fad0db9c844e8551f679a9cfb1d
+    path: Assets/Scenes/FacesModule.unity
+    guid: be76869573b24f44cbcf4ab7e3e0fe95
   m_configObjects: {}

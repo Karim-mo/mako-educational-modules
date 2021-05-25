@@ -16,9 +16,9 @@ public class QuestionText : MonoBehaviour
     public void initQuestionText(string text)
     {
         questionText.text = text;
-        StartCoroutine(SetButtonWidth());
+        StartCoroutine(SetBGWidth());
     }
-    public IEnumerator SetButtonWidth()
+    public IEnumerator SetBGWidth()
     {
         yield return new WaitForEndOfFrame();
         imageRect.sizeDelta = new Vector2(myRect.rect.width + 20, myRect.sizeDelta.y + 10);
