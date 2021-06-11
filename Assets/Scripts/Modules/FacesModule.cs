@@ -18,16 +18,16 @@ public class FacesModule : MonoBehaviour
 
     private int i;
 
-    public Face[] stageTwoFaces;
-    public GameObject[] questions;
 
     [Header("Stage 1")]
     public Face[] faces;
     public GameObject facesPrefab;
     public GameObject demoHolder;
     public GameObject demoQuestion;
-    
 
+    public Face[] stageTwoFaces;
+    public GameObject[] questions;
+    
     [Header("Stage 2 & 3")]
     public GameObject stageTwo;
     public GameObject stageTwoHolderPrefab;
