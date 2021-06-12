@@ -22,6 +22,7 @@ public class NetworkManager : MonoBehaviour
     public bool isConnected = false;
     [HideInInspector]
     public bool ttsDone;
+    public bool emotionDone;
     [HideInInspector]
     public string sceneToLoad = "Null";
 
@@ -98,6 +99,13 @@ public class NetworkManager : MonoBehaviour
                     ttsDone = true;
                 }
             }
+            if(msg.type == "led_response")
+            {
+                if(msg.message == "led_complete"){
+                    emotionDone = true;
+                    Debug.Log(emotionDone);
+                }
+            }
         }
     }
 
@@ -106,6 +114,14 @@ public class NetworkManager : MonoBehaviour
         MakoServerMessage msg = new MakoServerMessage();
         msg.type = "tts_request";
         msg.message = message;        
+        ws.Send(JsonConvert.SerializeObject(msg));
+    }
+
+    public void sendExpression(string exp_type){
+        emotionDone = false;
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "led_control";
+        msg.exp_type = exp_type;        
         ws.Send(JsonConvert.SerializeObject(msg));
     }
 }

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpatialModule.unity
     guid: 2fe64a5dae0f29547ba17d3481f5e0c5
+  - enabled: 1
+    path: Assets/Scenes/StoriesModule.unity
+    guid: 09001c0be85e1ac428553c192e1426d8
   m_configObjects: {}
