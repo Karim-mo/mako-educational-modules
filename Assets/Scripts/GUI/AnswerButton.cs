@@ -38,12 +38,14 @@ public class AnswerButton : MonoBehaviour
             {
                 // Send positive feedback to robot
                 // Update game manager with correct answer to proceed with the questions
+                NetworkManager._Manager.sendExpression("hf");
                 Topics._topics.CorrectAnswerTrigger();
                 Debug.Log("This is the correct answer");
             }
             else
             {
                 // Send Negative feedback to robot
+                NetworkManager._Manager.sendExpression("sf");
                 Topics._topics.WrongAnswerTrigger();
                 Debug.Log("This is the wrong answer");
             }

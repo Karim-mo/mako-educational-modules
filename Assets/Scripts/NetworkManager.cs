@@ -104,6 +104,7 @@ public class NetworkManager : MonoBehaviour
                 if(msg.message == "led_complete"){
                     emotionDone = true;
                     Debug.Log(emotionDone);
+                    Invoke("sendNeutralFace", 5);
                 }
             }
         }
@@ -122,6 +123,14 @@ public class NetworkManager : MonoBehaviour
         MakoServerMessage msg = new MakoServerMessage();
         msg.type = "led_control";
         msg.exp_type = exp_type;        
+        ws.Send(JsonConvert.SerializeObject(msg));
+    }
+
+    private void sendNeutralFace(){
+        emotionDone = false;
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "led_control";
+        msg.exp_type = "nf";        
         ws.Send(JsonConvert.SerializeObject(msg));
     }
 }
