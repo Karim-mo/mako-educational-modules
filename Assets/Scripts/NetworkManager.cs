@@ -21,7 +21,7 @@ public class NetworkManager : MonoBehaviour
     [HideInInspector]
     public bool isConnected = false;
     [HideInInspector]
-    public bool ttsDone = false;
+    public bool ttsDone;
     [HideInInspector]
     public string sceneToLoad = "Null";
 
@@ -48,6 +48,7 @@ public class NetworkManager : MonoBehaviour
     
     void Start()
     {
+        ttsDone = true;
         ws = new WebSocket("ws://192.168.1.14:9000");
         ws.OnMessage += (sender, e) =>
         {

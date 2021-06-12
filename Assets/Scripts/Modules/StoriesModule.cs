@@ -48,6 +48,7 @@ public class StoriesModule : MonoBehaviour
     }
 
     public void Narrate(){
+        if(!Server._Manager.ttsDone) return;
         StartCoroutine(_Say(ttsText[page]));
     }
 
