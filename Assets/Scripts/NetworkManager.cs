@@ -50,7 +50,7 @@ public class NetworkManager : MonoBehaviour
     void Start()
     {
         ttsDone = true;
-        ws = new WebSocket("ws://192.168.1.14:9000");
+        ws = new WebSocket("ws://192.168.1.6:9000");
         ws.OnMessage += (sender, e) =>
         {
             Debug.Log(e.Data);
@@ -104,7 +104,7 @@ public class NetworkManager : MonoBehaviour
                 if(msg.message == "led_complete"){
                     emotionDone = true;
                     Debug.Log(emotionDone);
-                    Invoke("sendNeutralFace", 5);
+                    //Invoke("sendNeutralFace", 5);
                 }
             }
         }
