@@ -17,6 +17,11 @@ public class NetworkManager : MonoBehaviour
         public string module_name;
     }
 
+    [TextArea()]
+    public string ttsText;
+
+    [HideInInspector]
+    public Dictionary<string, string> ttsScript;
 
     [HideInInspector]
     public bool isConnected = false;
@@ -45,12 +50,25 @@ public class NetworkManager : MonoBehaviour
             DontDestroyOnLoad(this);
         }
         jobs = new Queue<MakoServerMessage>();
+        ttsScript = new Dictionary<string, string>();
     }
     
     void Start()
     {
+        string[] _ttsText = ttsText.Split('\n');
+
+        for(int i = 0; i < _ttsText.Length; i++){
+            ttsScript.Add(_ttsText[i].Trim(), i.ToString());
+        }
+
+        foreach(var elem in ttsScript){
+            Debug.Log(elem);
+        }
+
+        //Debug.Log(ttsScript);
+
         ttsDone = true;
-        ws = new WebSocket("ws://192.168.1.6:9000");
+        ws = new WebSocket("ws://192.168.1.14:9000");
         ws.OnMessage += (sender, e) =>
         {
             Debug.Log(e.Data);
@@ -112,9 +130,10 @@ public class NetworkManager : MonoBehaviour
 
     public void sendTTS(string message){
         ttsDone = false;
+        Debug.Log(message);
         MakoServerMessage msg = new MakoServerMessage();
         msg.type = "tts_request";
-        msg.message = message;        
+        msg.message = ttsScript[message];        
         ws.Send(JsonConvert.SerializeObject(msg));
     }
 

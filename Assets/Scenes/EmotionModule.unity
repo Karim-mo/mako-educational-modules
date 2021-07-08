@@ -2001,31 +2001,31 @@ MonoBehaviour:
     ttsText: So, what are emotions?
   - image: {fileID: 21300000, guid: e8f1d1928606a464a80d6aca0a2ed2f0, type: 3}
     ttsText: Emotions are reactions to thoughts, events or experiences, which bring
-      up feelings such as
+      up feelings such as.
   - image: {fileID: 21300000, guid: c4b58c1a49c785949aa90c2bbd90a9e4, type: 3}
-    ttsText: Happiness
+    ttsText: Happiness.
   - image: {fileID: 21300000, guid: 2891cd127962c4f4d840550b7b934189, type: 3}
-    ttsText: Sadness
+    ttsText: Sadness.
   - image: {fileID: 21300000, guid: 54ba39f225158c845a02db820bceaf10, type: 3}
-    ttsText: Anger
+    ttsText: Anger.
   - image: {fileID: 21300000, guid: 39592a2da3151284f897469396d3c080, type: 3}
-    ttsText: Worry
+    ttsText: Worry.
   - image: {fileID: 21300000, guid: 397a1faf2c8de6744902ef7f37e1b7ce, type: 3}
-    ttsText: or fear
+    ttsText: or fear.
   - image: {fileID: 21300000, guid: 7de209766936db24b8a44cee7c6bae2f, type: 3}
-    ttsText: Emotions show us what we are feeling inside
+    ttsText: Emotions show us what we are feeling inside.
   - image: {fileID: 21300000, guid: de971432ed678384dabf5c25b3e5b8d8, type: 3}
-    ttsText: Whether we are having a great moment, happy or excited
+    ttsText: Whether we are having a great moment, happy or excited.
   - image: {fileID: 21300000, guid: 870a4fd4a8c014f409f40785ca98490e, type: 3}
-    ttsText: Or we are having a difficult moment and feeling stressed, sad or angry
+    ttsText: Or we are having a difficult moment and feeling stressed, sad or angry.
   - image: {fileID: 21300000, guid: c508fe49c9bcae244a60aa61b2267533, type: 3}
     ttsText: There are no good or bad emotions and all feelings are okay.
   - image: {fileID: 21300000, guid: 410216a1e639cd145af14173d91396c1, type: 3}
-    ttsText: It's okay to feel happy
+    ttsText: It's okay to feel happy.
   - image: {fileID: 21300000, guid: dd1de41814947ae4283ec2bf49384b78, type: 3}
-    ttsText: Sad
+    ttsText: Sad.
   - image: {fileID: 21300000, guid: 777bc2322b2150c438a3d70a25250751, type: 3}
-    ttsText: Angry
+    ttsText: Angry.
   - image: {fileID: 21300000, guid: c6f5e70eea52bac4c830a3b3c121b6ed, type: 3}
     ttsText: Or scared.
   - image: {fileID: 21300000, guid: c6f5e70eea52bac4c830a3b3c121b6ed, type: 3}

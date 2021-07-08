@@ -1013,8 +1013,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8536a002fa77324da3da71708740063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ttsText: "Let's play a game about emotions.\r\nSo, what are emotions?\r\nEmotions
+    are reactions to thoughts, events or experiences, which bring up feelings such
+    as.\r\nHappiness.\r\nSadness.\r\nAnger.\r\nWorry.\r\nor fear.\r\nEmotions show
+    us what we are feeling inside.\r\nWhether we are having a great moment, happy
+    or excited.\r\nOr we are having a difficult moment and feeling stressed, sad or
+    angry.\r\nThere are no good or bad emotions and all feelings are okay.\r\nIt's
+    okay to feel happy.\r\nSad.\r\nAngry.\r\nOr scared.\r\nToday, we will learn how
+    to identify emotions by playing a game called...\r\nGuess the emotion!"
   isConnected: 0
   ttsDone: 0
+  emotionDone: 0
   sceneToLoad: Null
 --- !u!114 &1597259800
 MonoBehaviour:
