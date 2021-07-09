@@ -67,7 +67,7 @@ public class EmotionModule : MonoBehaviour
 
     private void Wrong(){
         isCorrect = false;
-        Say("You can do better! I believe in you, friend.");
+        Say("You can do better!");
     }
 
     IEnumerator Stage_1(){

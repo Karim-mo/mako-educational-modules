@@ -255,7 +255,7 @@ public class FacesModule : MonoBehaviour
 
     private void Wrong(){
         isCorrect = false;
-        StartCoroutine(Say("You can do better! I believe in you, friend."));
+        StartCoroutine(Say("You can do better!"));
     }
     
     private void Ready(){

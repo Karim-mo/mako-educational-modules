@@ -22,7 +22,7 @@ Find the angry face
 Find the scared face
 Who is happy in the pictures?
 Who is smiling?
-Find the sad face
+Find the sad face(DUP)
 Who is sad?
 Who is scared?
 Find the angry person
@@ -208,3 +208,49 @@ And sing the songs
 When calss is over Mom and Dad will pick me up
 And then we head home together!
 I can go to Church with my family!!!
+We are going to see how well you can remember these people.
+Let's talk about how will this game work.
+Here are 4 pictures of people and their faces.
+Try to remember each person.
+Then you will be asked a question like this.
+Who is Sarah?
+Hint: It is the last choice.
+Who is Jane?
+Who is Oliver?
+Who is Ben?
+Who is James?
+Who is Charlotte?
+Who is Alexander?
+Who is Ella?
+Who is Chloe?
+Who is Luna?
+Get ready for the next question.
+Great! Keep Going!
+Today, we will play a fun game about prepositions.
+Let's talk about the IN preposition.
+Look at the ball.
+The ball is in the box.
+Now, look at the mouse.
+The mouse is inside the box.
+Let's talk about the ON preposition.
+The ball is on the box.
+The mouse is on the box.
+Let's talk about the BEHIND preposition.
+The ball is behind the box.
+The mouse is behind the box.
+Let's talk about the IN FRONT OF preposition.
+The ball is in front of the box.
+The mouse is in front of the box.
+Let's talk about the NEXT TO preposition.
+The ball is next to the box.
+The mouse is next to the box.
+Let's talk about the BETWEEN preposition.
+The ball is between the boxes.
+The mouse is between the boxes.
+Let's talk about the UNDER preposition.
+The ball is under the box.
+The mouse is under the box.
+Select the right answer.
+Select the wrong answer.
+Amazing!
+You can do better!
