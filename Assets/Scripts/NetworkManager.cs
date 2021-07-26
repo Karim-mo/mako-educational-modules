@@ -14,6 +14,8 @@ public class NetworkManager : MonoBehaviour
         public string type;
         public string message;
         public string exp_type;
+        public string expression;
+        public string direction;
         public string module_name;
     }
 
@@ -68,7 +70,7 @@ public class NetworkManager : MonoBehaviour
         //Debug.Log(ttsScript);
 
         ttsDone = true;
-        ws = new WebSocket("ws://192.168.1.14:9000");
+        ws = new WebSocket("ws://192.168.1.10:9000");
         ws.OnMessage += (sender, e) =>
         {
             Debug.Log(e.Data);
@@ -117,14 +119,14 @@ public class NetworkManager : MonoBehaviour
                     ttsDone = true;
                 }
             }
-            if(msg.type == "led_response")
-            {
-                if(msg.message == "led_complete"){
-                    emotionDone = true;
-                    Debug.Log(emotionDone);
-                    //Invoke("sendNeutralFace", 5);
-                }
-            }
+            // if(msg.type == "led_response")
+            // {
+            //     if(msg.message == "led_complete"){
+            //         emotionDone = true;
+            //         Debug.Log(emotionDone);
+            //         //Invoke("sendNeutralFace", 5);
+            //     }
+            // }
         }
     }
 
@@ -143,6 +145,7 @@ public class NetworkManager : MonoBehaviour
         msg.type = "led_control";
         msg.exp_type = exp_type;        
         ws.Send(JsonConvert.SerializeObject(msg));
+        Invoke("sendNeutralFace", 5);
     }
 
     private void sendNeutralFace(){
@@ -152,4 +155,36 @@ public class NetworkManager : MonoBehaviour
         msg.exp_type = "nf";        
         ws.Send(JsonConvert.SerializeObject(msg));
     }
+
+    public void sendServoExpression(string expression){
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "servo_control";
+        msg.expression = expression;        
+        ws.Send(JsonConvert.SerializeObject(msg));
+        if(expression.StartsWith("r"))  Invoke("sendServoReset_Right", 5);
+        else Invoke("sendServoReset_Left", 5);
+    }   
+
+    public void sendServoReset_Right(){
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "servo_control";
+        msg.expression = "right_reset";        
+        ws.Send(JsonConvert.SerializeObject(msg));
+    }
+
+    public void sendServoReset_Left(){
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "servo_control";
+        msg.expression = "left_reset";        
+        ws.Send(JsonConvert.SerializeObject(msg));
+    }
+
+    public void sendMotorCommand(string direction){
+        MakoServerMessage msg = new MakoServerMessage();
+        msg.type = "motor_control";
+        msg.direction = direction;     
+        ws.Send(JsonConvert.SerializeObject(msg));
+    }
+
+
 }
